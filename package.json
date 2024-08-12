@@ -7,7 +7,7 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "lint": "eslint 'src/**/*.{js,jsx,ts,tsx}'",
+    "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "prepare": "husky"
   },
@@ -43,7 +43,17 @@
     "lint-staged": "^15.2.8",
     "typescript": "~5.5.2",
     "typescript-eslint": "8.0.0"
+  },
+  "lint-staged": {
+    "src/**/*.{js,ts,scss,md,html,json}": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "ng lint && lint-staged",
+      "pre-push": "ng build --prod"
+    }
   }
-
- 
 }
