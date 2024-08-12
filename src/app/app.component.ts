@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { environment } from '@env/environment.development';
 
-
 @Component({
   selector: 'app-root',
   standalone: true,
@@ -11,8 +10,9 @@ import { environment } from '@env/environment.development';
   styleUrl: './app.component.scss',
 })
 export class AppComponent implements OnInit {
+  xxx = 123;
 
-  ngOnInit():void {
+  ngOnInit(): void {
     console.log(environment.apiUrl);
   }
 }
