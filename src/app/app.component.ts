@@ -25,4 +25,14 @@ export class AppComponent implements OnInit {
   onSum(a: number, b: number): number {
     return a + b;
   }
+
+  /**
+   *
+   * @param a
+   * @param b
+   * @returns
+   */
+  onSubtract(a: number, b: number): number {
+    return a - b;
+  }
 }
