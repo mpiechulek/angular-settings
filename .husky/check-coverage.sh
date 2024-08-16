@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Path to your coverage report
-COVERAGE_REPORT_PATH='./coverage/lcov-report/index.xml'
+COVERAGE_REPORT_PATH='./coverage/front/index.xml'
 
 # Desired minimum coverage percentage
 MIN_COVERAGE=80

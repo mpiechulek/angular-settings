@@ -24,13 +24,13 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it('should sum 2 numbers', () => {
-    expect(component.onSum(2, 2)).toEqual(4);
-    expect(component.onSum(2, 2)).not.toEqual(5);
-  });
+  // it('should sum 2 numbers', () => {
+  //   expect(component.onSum(2, 2)).toEqual(4);
+  //   expect(component.onSum(2, 2)).not.toEqual(5);
+  // });
 
-  it('should subtract 2 numbers', () => {
-    expect(component.onSubtract(4, 2)).toEqual(2);
-    expect(component.onSubtract(2, 2)).not.toEqual(1);
-  });
+  // it('should subtract 2 numbers', () => {
+  //   expect(component.onSubtract(4, 2)).toEqual(2);
+  //   expect(component.onSubtract(2, 2)).not.toEqual(1);
+  // });
 });

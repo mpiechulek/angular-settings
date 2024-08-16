@@ -8,6 +8,7 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test --watch=false --code-coverage || exit 1 --browsers=ChromeHeadless",
     "test:watch": "ng test --watch=true --code-coverage || exit 1 --browsers=ChromeHeadless",
+    "check-coverage": "node ./check-coverage.js",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "prepare": "husky",
@@ -25,6 +26,7 @@
     "@angular/router": "^18.1.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
+    "xml2js": "^0.6.2",
     "zone.js": "~0.14.3"
   },
   "devDependencies": {
