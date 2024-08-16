@@ -47,7 +47,9 @@
     "typescript": "~5.5.2",
     "typescript-eslint": "8.0.0"
   },
-  "hooks": {
-    "pre-commit": "npm run test"
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint npm run pretty-quick npm run test"
+    }
   }
 }
