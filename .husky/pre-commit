@@ -1,2 +1,3 @@
 #!/usr/bin/env sh
-echo "Pre-commit hook triggered"
+# echo "Pre-commit hook triggered"
+npm run test
