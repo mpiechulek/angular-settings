@@ -46,10 +46,5 @@
     "pretty-quick": "^4.0.0",
     "typescript": "~5.5.2",
     "typescript-eslint": "8.0.0"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "npm run lint npm run pretty-quick npm run test"
-    }
   }
 }
