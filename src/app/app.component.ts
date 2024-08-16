@@ -12,7 +12,7 @@ import { environment } from '@env/environment.development';
 export class AppComponent implements OnInit {
   xxx = 123;
 
-  ngOnInit(): void {
+  ngOnInit() {
     console.log(environment.apiUrl);
   }
 
