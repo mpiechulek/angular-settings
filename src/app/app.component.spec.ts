@@ -18,11 +18,11 @@ describe('AppComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should create the app', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app).toBeTruthy();
-  });
+  // it('should create the app', () => {
+  //   const fixture = TestBed.createComponent(AppComponent);
+  //   const app = fixture.componentInstance;
+  //   expect(app).toBeTruthy();
+  // });
 
   // it('should sum 2 numbers', () => {
   //   expect(component.onSum(2, 2)).toEqual(4);

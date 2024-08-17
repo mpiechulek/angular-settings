@@ -21,19 +21,36 @@
 
 # exit 0
 
-# Path to your coverage report
-COVERAGE_REPORT_PATH='./coverage/front/index.xml'
+# # Path to your coverage report
+# COVERAGE_REPORT_PATH='./coverage/front/index.xml'
 
-# Desired minimum coverage percentage
-MIN_COVERAGE=80
+# # Desired minimum coverage percentage
+# MIN_COVERAGE=80
 
-# Extract coverage percentage from the report
-COVERAGE=$(xmlstarlet sel -t -v '//coverageLine/@linesCovered' $COVERAGE_REPORT_PATH | awk '{print ($1*100)/$2}')
+# # Extract coverage percentage from the report
+# COVERAGE=$(xmlstarlet sel -t -v '//coverageLine/@linesCovered' $COVERAGE_REPORT_PATH | awk '{print ($1*100)/$2}')
 
-if (( $(echo "$COVERAGE < $MIN_COVERAGE" | bc -l) )); then
-  echo "Coverage is below the required threshold of $MIN_COVERAGE%"
+# if (( $(echo "$COVERAGE < $MIN_COVERAGE" | bc -l) )); then
+#   echo "Coverage is below the required threshold of $MIN_COVERAGE%"
+#   exit 1
+# else
+#   echo "Coverage meets the required threshold."
+#   exit 0
+# fi
+
+echo "Running tests with coverage..."
+
+npm run test 
+
+# Debugging output
+
+coverage_check=$?
+
+echo "Coverage check exit code: $coverage_check"
+
+if [ $coverage_check -ne 0 ]; then
+  echo "Code coverage threshold not met or tests failed. Aborting push!!!"
   exit 1
 else
-  echo "Coverage meets the required threshold."
-  exit 0
+  echo "Code coverage threshold met. Proceeding with push. :)"
 fi

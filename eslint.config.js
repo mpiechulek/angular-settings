@@ -31,7 +31,7 @@ module.exports = tseslint.config(
         },
       ],
     },
-    ignores: ['front/coverage/**'],
+    ignores: ['coverage/**'],
   },
   {
     files: ['**/*.html'],

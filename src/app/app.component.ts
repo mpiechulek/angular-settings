@@ -10,8 +10,6 @@ import { environment } from '@env/environment.development';
   styleUrl: './app.component.scss',
 })
 export class AppComponent implements OnInit {
-  xxx = 123;
-
   ngOnInit() {
     console.log(environment.apiUrl);
   }
