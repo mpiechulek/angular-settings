@@ -24,10 +24,10 @@ module.exports = function (config) {
     jasmineHtmlReporter: {
       suppressAll: true, // removes the duplicated traces
     },
-    coverageIstanbulReporter: {
-      dir: require('path').join(__dirname, './coverage'), // Specify coverage report directory
-      reports: ['html', 'lcovonly', 'text-summary'], // Define report types
-      fixWebpackSourcePaths: true, // Fixes incorrect source references in the coverage report
+    coverageReporter: {
+      dir: require('path').join(__dirname, './coverage'),
+      subdir: '.',
+      reporters: [{ type: 'html' }, { type: 'text' }],
       check: {
         global: {
           statements: 80,
@@ -35,6 +35,11 @@ module.exports = function (config) {
           functions: 80,
           lines: 80,
         },
+      },
+    },
+    karmaTypescriptConfig: {
+      bundlerOptions: {
+        entrypoints: [/\.spec\.ts$/], // Target spec files for coverage
       },
     },
     reporters: ['progress', 'kjhtml'],
