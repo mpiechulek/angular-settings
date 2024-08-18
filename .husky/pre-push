@@ -40,19 +40,19 @@
 
 . "$(dirname "$0")/_/husky.sh"
 
-echo "Running tests with coverage..."
+test_exit_code=$?
 
-npm run test 
+# Perform the coverage check
+coverage_exit_code=$?
 
-# Debugging output
+# Output the exit codes for debugging purposes
+echo "Test exit code: $test_exit_code"
+echo "Coverage check exit code: $coverage_exit_code"
 
-coverage_check=$?
-
-echo "Coverage check exit code: $coverage_check"
-
-if [ $coverage_check -ne 0 ]; then
-  echo "Code coverage threshold not met or tests failed. Aborting push!!!"
+# Block push if either tests failed or coverage is insufficient
+if [ $test_exit_code -ne 0 ] || [ $coverage_exit_code -ne 0 ]; then
+  echo "Tests failed or code coverage threshold not met. Aborting push!!!"
   exit 1
 else
-  echo "Code coverage threshold met. Proceeding with push. :)"
+  echo "Tests passed and code coverage threshold met. Proceeding with push. :)"
 fi
