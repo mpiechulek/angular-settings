@@ -38,6 +38,8 @@
 #   exit 0
 # fi
 
+. "$(dirname "$0")/_/husky.sh"
+
 echo "Running tests with coverage..."
 
 npm run test 
