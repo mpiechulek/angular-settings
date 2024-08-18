@@ -13,6 +13,7 @@
     "lint:fix-coverage": "eslint . --fix coverage/",
     "lint-staged": "lint-staged",
     "prepare": "husky",
+    "prettier": "prettier . --write",
     "pretty-quick": "pretty-quick --staged"
   },
   "private": true,

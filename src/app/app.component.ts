@@ -3,34 +3,36 @@ import { RouterOutlet } from '@angular/router';
 import { environment } from '@env/environment.development';
 
 @Component({
-  selector: 'app-root',
-  standalone: true,
-  imports: [RouterOutlet],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.scss',
+    selector: 'app-root',
+    standalone: true,
+    imports: [RouterOutlet],
+    templateUrl: './app.component.html',
+    styleUrl: './app.component.scss',
 })
 export class AppComponent implements OnInit {
-  ngOnInit() {
-    console.log(environment.apiUrl);
-  }
+    xxx: boolean = false;
 
-  /**
-   *
-   * @param a
-   * @param b
-   * @returns
-   */
-  onSum(a: number, b: number): number {
-    return a + b;
-  }
+    ngOnInit(): void {
+        console.log(environment.apiUrl);
+    }
 
-  /**
-   *
-   * @param a
-   * @param b
-   * @returns
-   */
-  onSubtract(a: number, b: number): number {
-    return a - b;
-  }
+    /**
+     *
+     * @param a
+     * @param b
+     * @returns
+     */
+    onSum(a: number, b: number): number {
+        return a + b;
+    }
+
+    /**
+     *
+     * @param a
+     * @param b
+     * @returns
+     */
+    onSubtract(a: number, b: number) {
+        return a - b;
+    }
 }
