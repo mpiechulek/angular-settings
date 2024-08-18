@@ -24,10 +24,10 @@ module.exports = function (config) {
     jasmineHtmlReporter: {
       suppressAll: true, // removes the duplicated traces
     },
-    coverageReporter: {
-      dir: require('path').join(__dirname, './coverage/front'),
-      subdir: '.',
-      reporters: [{ type: 'html' }, { type: 'text-summary' }],
+    coverageIstanbulReporter: {
+      dir: require('path').join(__dirname, './coverage'), // Specify coverage report directory
+      reports: ['html', 'lcovonly', 'text-summary'], // Define report types
+      fixWebpackSourcePaths: true, // Fixes incorrect source references in the coverage report
       check: {
         global: {
           statements: 80,
