@@ -10,6 +10,7 @@
     "test:watch": "ng test --watch=true --code-coverage || exit 1",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
+    "lint:fix-coverage": "eslint . --fix coverage/",
     "lint-staged": "lint-staged",
     "prepare": "husky",
     "pretty-quick": "pretty-quick --staged"
